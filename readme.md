@@ -2,21 +2,18 @@
 
 This repo contains the source code for [VB-LoRA: Extreme Parameter Efficient Fine-Tuning with Vector Banks](https://arxiv.org/pdf/2405.15179).
 
-<img src="https://github.com/leo-yangli/VB-LoRA/blob/main/param_comp.png?raw=True" alt="Comparison of the PEFT methods" width="300"/>
+<img src="https://github.com/leo-yangli/VB-LoRA/blob/main/param_comp.png?raw=True" alt="Comparison of the PEFT methods" width="350"/>
 
 *Comparison of the PEFT methods on RoBERTa-Large. Our VB-LoRA achieves higher scores with significantly smaller number of stored parameters.*
 
 ![Overview](https://github.com/leo-yangli/VB-LoRA/blob/main/VB-LoRA.png?raw=True)
 *Left: The model parameters can be represented as a composition of vectors from a vector bank, which is shared across sub-vectors, modules and layers. Right: Architecture of VB-LoRA. We use a top-k softmax function to select k vectors from the vector bank. The selected vectors are then pooled into a sub-vector, which is arranged at a desired position, forming the parameters of LoRA.*
 
+## Steps to reproduce our results.
 
-## NLU
-
+### NLU
 - Modified code for running experiments for Natural Language Understanding experiments.
 - Adapted from [LoRA source code](https://github.com/microsoft/LoRA).
-
-
-### Steps to reproduce our results
 #### Create and activate conda env
 ```console
 cd NLU
@@ -42,14 +39,12 @@ cd NLU
 ```
 
 
-## Instruction Tuning
+### Instruction Tuning
 
 - The code for running Llama2 is adapted from [qlora source code](https://github.com/artidoro/qlora).
 - We implement VB-LoRA within the framework of Huggingface [PEFT](https://github.com/huggingface/peft/). Our added code can be found under ```peft/src/peft/tuners/vblora```
 - Fine-tuning the Llama2 model requires access to the model weights on HuggingFace. Ensure you have the access before running the code.
 
-
-### Steps to reproduce our results
 #### Create and activate conda env
 ```console
 cd instruction_tuning
