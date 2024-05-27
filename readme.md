@@ -11,7 +11,7 @@ This repo contains the source code for [VB-LoRA: Extreme Parameter Efficient Fin
 
 ## Steps to reproduce our results.
 
-### NLU
+### * NLU
 - Modified code for running experiments for Natural Language Understanding experiments.
 - Adapted from [LoRA source code](https://github.com/microsoft/LoRA).
 #### Create and activate conda env
@@ -39,7 +39,7 @@ cd NLU
 ```
 
 
-### Instruction Tuning
+### * Instruction Tuning
 
 - The code for running Llama2 is adapted from [qlora source code](https://github.com/artidoro/qlora).
 - We implement VB-LoRA within the framework of Huggingface [PEFT](https://github.com/huggingface/peft/). Our added code can be found under ```peft/src/peft/tuners/vblora```
