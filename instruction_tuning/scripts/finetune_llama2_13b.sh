@@ -1,0 +1,43 @@
+python qlora.py \
+    --model_name_or_path meta-llama/Llama-2-13b-hf \
+    --output_dir ./output/llama2_13b \
+    --logging_steps 20 \
+    --save_strategy epoch \
+    --data_seed 42 \
+    --save_steps 500 \
+    --save_total_limit 40 \
+    --evaluation_strategy steps \
+    --eval_dataset_size 1024 \
+    --max_eval_samples 1000 \
+    --per_device_eval_batch_size 4 \
+    --max_new_tokens 32 \
+    --dataloader_num_workers 1 \
+    --group_by_length \
+    --logging_strategy steps \
+    --remove_unused_columns False \
+    --do_train \
+    --do_eval \
+    --do_mmlu_eval \
+    --lora_r 64 \
+    --lora_alpha 16 \
+    --lora_modules all \
+    --double_quant \
+    --quant_type nf4 \
+    --bf16 \
+    --bits 4 \
+    --warmup_ratio 0.1 \
+    --lr_scheduler_type cosine \
+    --gradient_checkpointing \
+    --dataset alpaca-clean \
+    --source_max_len 16 \
+    --target_max_len 512 \
+    --per_device_train_batch_size 4 \
+    --gradient_accumulation_steps 4 \
+    --num_train_epochs 1 \
+    --eval_steps 187 \
+    --learning_rate 0.0004 \
+    --adam_beta2 0.999 \
+    --max_grad_norm 0.3 \
+    --lora_dropout 0.05 \
+    --weight_decay 0.0 \
+    --seed 0
