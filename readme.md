@@ -9,7 +9,7 @@ This repo contains the source code for [VB-LoRA: Extreme Parameter Efficient Fin
 ![Overview](https://github.com/leo-yangli/VB-LoRA/blob/main/VB-LoRA.png?raw=True)
 ***Overview of VBLoRA**. Left: The model parameters can be represented as a composition of vectors from a vector bank, which is shared across sub-vectors, modules and layers. Right: Architecture of VB-LoRA. We use a top-k softmax function to select k vectors from the vector bank. The selected vectors are then pooled into a sub-vector, which is arranged at a desired position, forming the parameters of LoRA.*
 
-## Steps to reproduce our results
+## Steps to reproduce the results
 
 ## NLU
 - Modified code for running experiments for Natural Language Understanding experiments.
