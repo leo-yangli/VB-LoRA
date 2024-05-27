@@ -2,12 +2,17 @@
 
 This repo contains the source code for [VB-LoRA: Extreme Parameter Efficient Fine-Tuning with Vector Banks](https://arxiv.org/pdf/2405.15179).
 
+## Abstract
+As the adoption of large language models increases and the need for per-user or per-task model customization grows, the parameter-efficient fine-tuning (PEFT) methods, such as low-rank adaptation (LoRA) and its variants, incur substantial storage and transmission costs. To further reduce stored parameters, we introduce a "divide-and-share" paradigm that breaks the barriers of low-rank decomposition across matrix dimensions, modules and layers by sharing parameters globally via a *vector bank*. As an instantiation of the paradigm to LoRA, our proposed VB-LoRA composites *all* the low-rank matrices of LoRA from a shared *vector bank* with a differentiable top-k admixture module. VB-LoRA achieves extreme parameter efficiency while maintaining comparable or better performance compared to state-of-the-art PEFT methods. Extensive experiments demonstrate the effectiveness of VB-LoRA on natural language understanding, natural language generation, and instruction tuning tasks. **When fine-tuning the Llama2-13B model, VB-LoRA only uses 0.4% of LoRA's stored parameters yet attaining superior results.** 
+
+<!---![Overview](https://github.com/leo-yangli/VB-LoRA/blob/main/VB-LoRA.png?raw=True)--->
+<img src="https://github.com/leo-yangli/VB-LoRA/blob/main/VB-LoRA.png?raw=True" alt="Overview of VB-LoRA" width="90%"/>
+
+***Overview of VB-LoRA**. Left: The model parameters can be represented as a composition of vectors from a vector bank, which is shared across sub-vectors, modules and layers. Right: Architecture of VB-LoRA. We use a top-k softmax function to select k vectors from the vector bank. The selected vectors are then pooled into a sub-vector, which is arranged at a desired position, forming the parameters of LoRA.*
+
 <img src="https://github.com/leo-yangli/VB-LoRA/blob/main/param_comp.png?raw=True" alt="Comparison of the PEFT methods" width="350"/>
 
-***Comparison with other PEFT methods on RoBERTa-Large.** VB-LoRA achieves higher scores with significantly smaller number of stored parameters.*
-
-![Overview](https://github.com/leo-yangli/VB-LoRA/blob/main/VB-LoRA.png?raw=True)
-***Overview of VBLoRA**. Left: The model parameters can be represented as a composition of vectors from a vector bank, which is shared across sub-vectors, modules and layers. Right: Architecture of VB-LoRA. We use a top-k softmax function to select k vectors from the vector bank. The selected vectors are then pooled into a sub-vector, which is arranged at a desired position, forming the parameters of LoRA.*
+***Comparison with other PEFT methods on RoBERTa-Large.*** VB-LoRA achieves higher scores with significantly smaller number of stored parameters.
 
 ## Steps to reproduce the results
 
@@ -42,7 +47,7 @@ cd NLU
 ## Instruction Tuning
 
 - The code for running Llama2 is adapted from [qlora source code](https://github.com/artidoro/qlora).
-- We implement VB-LoRA within the framework of Huggingface [PEFT](https://github.com/huggingface/peft/). Our added code can be found under ```peft/src/peft/tuners/vblora```
+- We implement VB-LoRA within the framework of Huggingface [PEFT](https://github.com/huggingface/peft/). Our VB-LoRA code can be found under ```peft/src/peft/tuners/vblora```
 - Fine-tuning the Llama2 model requires access to the model weights on HuggingFace. Ensure you have the access before running the code.
 
 #### Create and activate conda env
