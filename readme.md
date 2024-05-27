@@ -51,7 +51,7 @@ cd instruction_tuning
 conda create -n instruction_tuning python==3.10
 conda activate instruction_tuning
 ```
-### Install the pre-requisites
+#### Install the pre-requisites
 qlora:
 ```console
 cd instruction_tuning
@@ -62,7 +62,7 @@ peft:
 cd peft
 pip install -r requirements.txt
 ```
-### Start the experiments
+#### Start the experiments
 The scripts are located in the "instruction_tuning/scripts" folder.
 
 For example,
