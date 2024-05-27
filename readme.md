@@ -2,11 +2,11 @@
 
 This repo contains the source code for [VB-LoRA: Extreme Parameter Efficient Fine-Tuning with Vector Banks](https://arxiv.org/pdf/2405.15179).
 
-![Parameter Comparison](https://github.com/leo-yangli/VB-LoRA/blob/main/param_comp.png?raw=True)
-* Comparison of the PEFT methods on RoBERTa-Large. Our VB-LoRA achieves higher scores with significantly smaller number of stored parameters.*
+<img src="https://github.com/leo-yangli/VB-LoRA/blob/main/param_comp.png?raw=True" alt="Comparison of the PEFT methods" width="300"/>
+*Comparison of the PEFT methods on RoBERTa-Large. Our VB-LoRA achieves higher scores with significantly smaller number of stored parameters.*
 
 ![Overview](https://github.com/leo-yangli/VB-LoRA/blob/main/VB-LoRA.png?raw=True)
-* Left: The model parameters can be represented as a composition of vectors from a vector bank, which is shared across sub-vectors, modules and layers. Right: Architecture of VB-LoRA. We use a top-k softmax function to select k vectors from the vector bank. The selected vectors are then pooled into a sub-vector, which is arranged at a desired position, forming the parameters of LoRA.*
+Left: The model parameters can be represented as a composition of vectors from a vector bank, which is shared across sub-vectors, modules and layers. Right: Architecture of VB-LoRA. We use a top-k softmax function to select k vectors from the vector bank. The selected vectors are then pooled into a sub-vector, which is arranged at a desired position, forming the parameters of LoRA.*
 
 
 ## NLU
