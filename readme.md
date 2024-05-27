@@ -9,9 +9,9 @@ This repo contains the source code for [VB-LoRA: Extreme Parameter Efficient Fin
 ![Overview](https://github.com/leo-yangli/VB-LoRA/blob/main/VB-LoRA.png?raw=True)
 *Left: The model parameters can be represented as a composition of vectors from a vector bank, which is shared across sub-vectors, modules and layers. Right: Architecture of VB-LoRA. We use a top-k softmax function to select k vectors from the vector bank. The selected vectors are then pooled into a sub-vector, which is arranged at a desired position, forming the parameters of LoRA.*
 
-## Steps to reproduce our results.
+## Steps to reproduce our results
 
-### * NLU
+## NLU
 - Modified code for running experiments for Natural Language Understanding experiments.
 - Adapted from [LoRA source code](https://github.com/microsoft/LoRA).
 #### Create and activate conda env
@@ -39,7 +39,7 @@ cd NLU
 ```
 
 
-### * Instruction Tuning
+## Instruction Tuning
 
 - The code for running Llama2 is adapted from [qlora source code](https://github.com/artidoro/qlora).
 - We implement VB-LoRA within the framework of Huggingface [PEFT](https://github.com/huggingface/peft/). Our added code can be found under ```peft/src/peft/tuners/vblora```
