@@ -83,12 +83,10 @@ For evaluation, please use [LLM Judge](https://github.com/lm-sys/FastChat/tree/m
 If you found this code useful, please cite our paper.
 
 ```  
-@misc{li2024vblora,
+@inproceedings{li2024vblora,
       title={VB-LoRA: Extreme Parameter Efficient Fine-Tuning with Vector Banks}, 
       author={Yang Li and Shaobo Han and Shihao Ji},
-      year={2024},
-      eprint={2405.15179},
-      archivePrefix={arXiv},
-      primaryClass={cs.CL}
+      booktitle={The 38th Conference on Neural Information Processing Systems (NeurIPS)},
+      year={2024}
 }
 ```  
