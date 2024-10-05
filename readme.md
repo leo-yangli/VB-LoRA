@@ -1,4 +1,4 @@
-# VB-LoRA: Extreme Parameter Efficient Fine-Tuning with Vector Banks
+# VB-LoRA: Extreme Parameter Efficient Fine-Tuning with Vector Banks [NeurIPS 2024]
 
 This repo contains the source code for [VB-LoRA: Extreme Parameter Efficient Fine-Tuning with Vector Banks](https://arxiv.org/pdf/2405.15179).
 
